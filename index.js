@@ -382,8 +382,23 @@ client.connect((err) => {
               )
               .slice(
                 0,
-                users[user].filter((x) => x.answer6 === "yes").length < 3
-                  ? 3 - users[user].filter((x) => x.answer6 === "yes").length
+                users[user].filter(
+                  (x) =>
+                    x.answer10 === "1stick" ||
+                    x.answer10 === "2_4stick" ||
+                    x.answer10 === "5stick" ||
+                    x.answer10 === "5_19stick" ||
+                    x.answer10 === "20stickOrPlus"
+                ).length < 3
+                  ? 3 -
+                      users[user].filter(
+                        (x) =>
+                          x.answer10 === "1stick" ||
+                          x.answer10 === "2_4stick" ||
+                          x.answer10 === "5stick" ||
+                          x.answer10 === "5_19stick" ||
+                          x.answer10 === "20stickOrPlus"
+                      ).length
                   : 0
               )
               .map((d) => {
